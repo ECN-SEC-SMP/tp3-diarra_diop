@@ -1,40 +1,83 @@
 # TP – Programmation Orientée Objet : Manipulation de fichier en C++
 
-## 📘 Description du projet
+## 🎯 Objectifs du TP
 
-L’objectif de ce TP est de manipuler des classes, de travailler sur la surcharge d’opérateurs et
-de mettre enœuvrelepolymorphismeetutilisant des templates.
----
+Ce TP a pour but de manipuler plusieurs aspects importants du C++ :
 
-## 🧱 Création d'une classe point template
-  
-
----
-
-## 🧱 Formes géométriques abstraites
+- la programmation générique avec **templates**  
+- la **surcharge d’opérateurs**
+- l’héritage et le **polymorphisme**
+- les **classes abstraites**
+- la manipulation de **structures de données** (`vector`)
 
 ---
 
-## 🧱 Formes géométriques "concrètes"
+## 📌 Contenu du travail
+
+### 1️⃣ Classe `Point<T>`
+
+Créer une classe template représentant un point du plan.
+
+La classe doit inclure :
+
+- deux attributs `x` et `y`,
+- un constructeur avec deux paramètres pour l'abscisse et l'ordonnée
+- un constructeur de recopie,
+- des accesseurs/mutateurs,
+- une méthode  
+  ```cpp
+  void translate(const T& dx, const T& dy);
 
 ---
-## 🧱 Spécilisation
+
+###2️⃣ Classe abstraite Forme<T,M>
+
+Créer une classe représentant une forme géométrique centrée sur un point.
+
+Elle doit contenir :
+
+- un attribut centre de type Point<T>,
+- un constructeur prenant un centre,
+- deux méthodes abstraites :
+    ```cpp
+  void translate(const T& dx, const T& dy);
 
 ---
-## 🧱 Liste des formes
+
+une surcharge de operator<< en fonction amie.
+
+---
+
+## 3️⃣ Formes géométriques "concrètes"
+Créer une classe dérivant de Forme<T,M> contenant largeur et longueur, et fixer automatiquement le centre en (largeur / 2, longueur / 2)
+redéfinir :
+- perimetre()
+- surface()
+- surcharger operator<<
+Le programme principal (main.cpp) doit tester :
+- l’affichage,
+- les méthodes de calcul,
+
+---
+
+## 4️⃣ Spécilisation
+Spécialiser la méthode translate() pour les points de type string en utilisant std::swap pour échanger les coordonnées.
+
+---
+## 5️⃣ Liste des formes
 
 --- 
 
-## ⚙️ Compilation et exécution
+## 6️⃣ Compilation et exécution
 
-### 🧰 Compilation
+### 🧰 A la main
 Utiliser **g++** (ou tout compilateur compatible C++17 ou supérieur) :
 
 ```bash
-g++ vehicule.cpp voiture.cpp bateau.cpp voiture_amphibe.cpp -o monprog
+g++ main.cpp -o prog
 ```
 ```bash
-./monprog
+./prog
 ```
 ### Makefile
 ```bash
@@ -42,7 +85,7 @@ make
 ```
 
 
-## 📘 Auteur
+## 7️⃣ Auteur
 
 ### Noms : Mame Diarra DIOP
 ### Filière : SEC_2027
