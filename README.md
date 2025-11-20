@@ -87,8 +87,8 @@ make
 
 ## 7️⃣ Auteur
 
-### Noms : Mame Diarra DIOP
-### Filière : SEC_2027
-### Université : Ecole Centrale de Nantes
+Noms : Mame Diarra DIOP
+Filière : SEC_2027
+Université : Ecole Centrale de Nantes
 
 📅 TP réalisé le 17 Novembre 2025
