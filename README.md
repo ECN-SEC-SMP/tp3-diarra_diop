@@ -1,4 +1,4 @@
-# TP – Programmation Orientée Objet : Manipulation de fichier en C++
+# TP – Programmation Orientée Objet : Les templates en C++
 
 ## 🎯 Objectifs du TP
 
@@ -60,15 +60,29 @@ Le programme principal (main.cpp) doit tester :
 
 ---
 
-## 4️⃣ Spécilisation
-Spécialiser la méthode translate() pour les points de type string en utilisant std::swap pour échanger les coordonnées.
+## 4️⃣ Jeux d'essai
+Pour tester le bon fonctionnement de l'implémentation des différentes classes, des jeux d'essai ont été fait dans le programme principal.
+Ci-dessous le retour.
+
+<img width="1422" height="458" alt="image" src="https://github.com/user-attachments/assets/145867f0-e077-4523-a5f8-04081712c4d7" />
+ Remarque :
+Le problème de la division entière se pose. En effet, pour l'exemple du rectangle de longueur 10 et de largeur 5, le centre devrait être: (5, 2.5). Comme pour le carre ou on a (2,2) au lieu de (2.5, 2.5).
+Le type float dans le deuxieme parametre du template ne change rien :
+<img width="1209" height="686" alt="image" src="https://github.com/user-attachments/assets/96ac21d9-7421-4d10-89ec-707760701008" />
+
+
 
 ---
-## 5️⃣ Liste des formes
+## 5️⃣ Spécilisation
+Spécialiser la méthode translate() pour les points de type string en utilisant std::swap pour échanger les coordonnées.
+Il s'agit de declarer la fonction translater() en tant que fonction template.
+
+---
+## 6️⃣ Liste des formes
 
 --- 
 
-## 6️⃣ Compilation et exécution
+## 7️⃣ Compilation et exécution
 
 ### 🧰 A la main
 Utiliser **g++** (ou tout compilateur compatible C++17 ou supérieur) :
@@ -85,7 +99,7 @@ make
 ```
 
 
-## 7️⃣ Auteur
+##  8️⃣Auteur
 
 Noms : Mame Diarra DIOP
 Filière : SEC_2027
