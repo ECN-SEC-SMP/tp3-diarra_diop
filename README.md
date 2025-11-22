@@ -30,7 +30,7 @@ La classe doit inclure :
 
 ---
 
-###2️⃣ Classe abstraite Forme<T,M>
+### 2️⃣ Classe abstraite Forme<T,M>
 
 Créer une classe représentant une forme géométrique centrée sur un point.
 
@@ -41,14 +41,11 @@ Elle doit contenir :
 - deux méthodes abstraites :
     ```cpp
   void translate(const T& dx, const T& dy);
-
----
-
 une surcharge de operator<< en fonction amie.
 
 ---
 
-## 3️⃣ Formes géométriques "concrètes"
+### 3️⃣ Formes géométriques "concrètes"
 Créer une classe dérivant de Forme<T,M> contenant largeur et longueur, et fixer automatiquement le centre en (largeur / 2, longueur / 2)
 redéfinir :
 - perimetre()
@@ -60,7 +57,7 @@ Le programme principal (main.cpp) doit tester :
 
 ---
 
-## 4️⃣ Jeux d'essai
+### 4️⃣ Jeux d'essai
 Pour tester le bon fonctionnement de l'implémentation des différentes classes, des jeux d'essai ont été fait dans le programme principal.
 Ci-dessous le retour.
 
@@ -73,12 +70,33 @@ Le type float dans le deuxieme parametre du template ne change rien :
 
 
 ---
-## 5️⃣ Spécilisation
-Spécialiser la méthode translate() pour les points de type string en utilisant std::swap pour échanger les coordonnées.
-Il s'agit de declarer la fonction translater() en tant que fonction template.
+### 5️⃣ Spécilisation
+Spécialiser la méthode translate() pour les points de type string.
+Il s'agit de declarer la fonction translater() en tant que fonction template. La declaration est faite en dehors de la classe comme suit: 
+```cpp
+   //Specialisation de la fonction translater pour le type string
+  template<> void Point<string>::translater(const string &a_x, const string &a_y)
+    {
+        x += a_x;
+        y += a_y;
+    }
+
+```
+<img width="1257" height="450" alt="image" src="https://github.com/user-attachments/assets/dc156484-100f-4342-9477-97dd5f84bd9e" />
+
 
 ---
-## 6️⃣ Liste des formes
+### 6️⃣ Liste des formes
+A l’aide de la structure de données vector<>, on définit la classe listeFormes qui, outre les opérations classiques de consultation ou d’ajout de formes dans la liste permet de :
+ — calcule la surface totale de la liste
+ — calcule la boite englobante de la liste de formes (le plus petit rectangle aligné sur les axes qui contient l’ensemble des formes de la liste)
+ La chose la plus importante dans cette section est de gerer la liste de forme du fait que Forme est une classe virtuelle donc on ne peut pas instancier ses objets abstraits.
+ #### A retenir:
+ Il faut utiliser des pointeurs et gerer l'allocation de la mémoire en supprimant la mémoire occupée une fois la ressource utilisée. Ce qui est réalisé en créant un destructeur virtuel dans la classe Forme de sorte à appeler le bon destructeur Rectangle ou Carre. 
+<img width="1049" height="307" alt="image" src="https://github.com/user-attachments/assets/364c1842-99ea-4878-88a0-12decc18a836" />
+
+#### La boite englobante
+A compléter
 
 --- 
 
@@ -100,9 +118,6 @@ make
 
 
 ##  8️⃣Auteur
-
-Noms : Mame Diarra DIOP
-Filière : SEC_2027
-Université : Ecole Centrale de Nantes
+Mame Diarra DIOP_SEC 2027
 
 📅 TP réalisé le 17 Novembre 2025
